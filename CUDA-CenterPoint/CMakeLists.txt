@@ -19,7 +19,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
 
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.14)
 project(centerpoint)
 set(arch ${CMAKE_HOST_SYSTEM_PROCESSOR})
 
@@ -27,8 +27,8 @@ if(${arch}     STREQUAL  "aarch64")
   # set(TENSORRT_ROOT         /root/.kiwi/lib/TensorRT-8.5.3.1-cuda11x)
   # set(CUDA_TOOLKIT_ROOT_DIR /root/.kiwi/lib/cuda-11.8)
 elseif(${arch} STREQUAL "x86_64")
-  set(TENSORRT_ROOT         /root/.kiwi/lib/TensorRT-8.5.3.1-cuda11x)
-  set(CUDA_TOOLKIT_ROOT_DIR /root/.kiwi/lib/cuda-11.8)
+  set(TENSORRT_ROOT         /root/TensorRT-8.6.1.6/)
+  set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda)
 endif()
 
 set(CMAKE_BUILD_TYPE "Release")

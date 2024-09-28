@@ -204,7 +204,7 @@ std::shared_ptr<bevfusion::Core> create_core(const std::string& model, const std
   transbbox.model = nv::format("model/%s/build/head.bbox.plan", model.c_str());
 
   // if you got an inaccurate boundingbox result please turn on the layernormplugin plan.
-  // transbbox.model = nv::format("model/%s/build/head.bbox.layernormplugin.plan", model.c_str());
+  transbbox.model = nv::format("model/%s/build/head.bbox.layernormplugin.plan", model.c_str());
   transbbox.confidence_threshold = 0.12f;
   transbbox.sorted_bboxes = true;
 
@@ -222,8 +222,8 @@ std::shared_ptr<bevfusion::Core> create_core(const std::string& model, const std
 int main(int argc, char** argv) {
 
   const char* data      = "example-data";
-  const char* model     = "resnet50int8";
-  const char* precision = "int8";
+  const char* model     = "resnet50";
+  const char* precision = "fp16";
 
   if (argc > 1) data      = argv[1];
   if (argc > 2) model     = argv[2];
